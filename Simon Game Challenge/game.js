@@ -15,6 +15,7 @@ $(document).keydown(function() {
 });
 
 
+// on button
 
 $(".btn").click(function() {
   var userChosenColour = $(this).attr("id")
@@ -24,6 +25,7 @@ $(".btn").click(function() {
   animatePress(userChosenColour)
   checkAnswer(userClickedPattern.length - 1)
 })
+//check answer
 
 function checkAnswer(currentLevel) {
   if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
@@ -48,6 +50,7 @@ function checkAnswer(currentLevel) {
     startOver();
   }
 }
+// game level
 
 function nextSequence() {
   userClickedPattern = [];
@@ -61,7 +64,7 @@ function nextSequence() {
   $("#" + randomChosenColour).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100)
   playSound(randomChosenColour);
 }
-
+// game sound
 function playSound(name) {
   var sound = new Audio("sounds/" + name + ".mp3");
   sound.play();
